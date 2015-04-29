@@ -43,6 +43,31 @@ public class LayoutArquivo implements Layout{
 		output.writeLong(this.posicao);
 		
 	}
+	@Override
+	public String getId() {
+		Charset enc = Charset.forName("ISO-8859-1");
+		return new String(cep,enc);
+	}
+	@Override
+	public void printFields() {
+		Charset enc = Charset.forName("ISO-8859-1");
+		System.out.println(new String(cep,enc));
+		System.out.println(posicao);		
+	}
+	@Override
+	public long getPosition() {
+		return posicao;
+	}
+	@Override
+	public int lengthLine() {
+		// 32 byte de fim de linha
+		return 32;
+	}
+	@Override
+	public void setPosition(long position) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 	

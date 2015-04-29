@@ -1,12 +1,10 @@
-package br.com.geradorArquivoIndice;
+package br.com.buscabinariaemarquivocep;
 
 import java.io.DataInput;
-import java.io.DataOutput;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import br.com.geradorArquivoIndice.Layout;
 
-public class Endereco implements Layout{
+public class Endereco {
 	
 	private String logradouro;
 	private String bairro;
@@ -14,7 +12,6 @@ public class Endereco implements Layout{
 	private String estado;
 	private String sigla;
 	private String cep;
-	private long position;
 
 	public void leEndereco(DataInput din) throws IOException
 	{
@@ -25,18 +22,10 @@ public class Endereco implements Layout{
 		byte sigla[] = new byte[2];
 		byte cep[] = new byte[8];
 		
-		
-
-
-		din.readFully(logradouro);
-		din.readFully(bairro);
-		din.readFully(cidade);
-		din.readFully(estado);
-		din.readFully(sigla);
 		din.readFully(cep);
-		din.readByte(); // Ultimo espaco em branco 
+		/*din.readByte(); // Ultimo espaco em branco 
 		din.readByte(); // Quebra de linha
-		
+		*/
 		// Definie a forma como caracteres especias estão codificados.
 		Charset enc = Charset.forName("ISO-8859-1");
 		
@@ -94,45 +83,6 @@ public class Endereco implements Layout{
 	
 	public void setCep(String cep) {
 		this.cep = cep;
-	}
-
-	@Override
-	public void readFields(DataInput input) throws IOException {
-		leEndereco(input);
-		
-	}
-
-	@Override
-	public void writeFields(DataOutput output) throws IOException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void printFields() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public long getPosition() {
-		return this.position;
-	}
-
-	public void setPosition(long position){
-		this.position = position;
-		
-	}
-	@Override
-	public int lengthLine() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 }
