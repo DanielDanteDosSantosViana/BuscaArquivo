@@ -116,8 +116,14 @@ public class Endereco implements Layout{
 
 	@Override
 	public void printFields() {
-		// TODO Auto-generated method stub
 		
+		System.out.println( "Logradouro : "+this.logradouro);
+		System.out.println( "Bairro : "+this.bairro);
+		System.out.println( "Cidade : "+this.cidade);
+		System.out.println( "Estado : "+this.estado);
+		System.out.println( "Sigle : "+this.sigla);
+		System.out.println( "CEP : "+this.cep);
+		System.out.println( "Posicao : "+this.position);
 	}
 
 	@Override
@@ -131,8 +137,7 @@ public class Endereco implements Layout{
 	}
 	@Override
 	public int lengthLine() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 300;
 	}
 
 }

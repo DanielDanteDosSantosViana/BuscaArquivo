@@ -10,6 +10,7 @@ import br.com.geradorArquivoIndice.LayoutArquivo;
 public class BuscaArquivoEmIndice {
 
 	public static void main(String[] args) throws Exception {
+	
 		Buscador buscaBinaria = new BuscaBinaria();
 		Layout layoutArquivo = new LayoutArquivo();
 		buscaBinaria.busca(layoutArquivo);

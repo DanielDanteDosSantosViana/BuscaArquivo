@@ -51,8 +51,8 @@ public class LayoutArquivo implements Layout{
 	@Override
 	public void printFields() {
 		Charset enc = Charset.forName("ISO-8859-1");
-		System.out.println(new String(cep,enc));
-		System.out.println(posicao);		
+		System.out.println("CEP : "+new String(cep,enc));
+		System.out.println("Posicao : "+ posicao);		
 	}
 	@Override
 	public long getPosition() {
